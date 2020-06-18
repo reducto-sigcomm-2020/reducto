@@ -1,0 +1,34 @@
+environs:
+  dataset_root: '/mnt/ssd2t/dataset'
+  thresh_root: 'config/threshes'
+  dataset_name: southampton
+  subsets: [raw000, sat005, sat009pm]
+mongo:
+  host: localhost
+  port: 27017
+inference:
+  type: yolo
+differencer:
+  use_dict: true
+  types: [area, pixel, edge]
+motioner:
+  type: adapative_bg_learning
+evaluator:
+  - type: coco
+    class: [0]
+  - type: coco
+    class: [2]
+  - type: coco
+    class: [0, 2]
+  - type: counting
+    class: [0]
+  - type: counting
+    class: [2]
+  - type: counting
+    class: [0, 2]
+  - type: tagging
+    class: [0]
+  - type: tagging
+    class: [2]
+  - type: tagging
+    class: [0, 2]

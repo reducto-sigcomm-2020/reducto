@@ -1,0 +1,24 @@
+environs:
+  dataset_root: '/mnt/ssd2t/dataset'
+  thresh_root: 'config/threshes'
+datasets:
+  - dataset: auburn
+    subsets: [fri005, sat001am, sat005pm]
+    scale: 4
+  - dataset: jacksonhole
+    subsets: [raw000, raw019, raw038]
+    scale: 4
+  - dataset: lagrange
+    subsets: [raw000, raw005, raw022]
+    scale: 4
+  - dataset: southampton
+    subsets: [raw000, sat005, sat009pm]
+    scale: 4
+mongo:
+  host: thanos.cs.ucla.edu
+  port: 27017
+inference:
+  type: yolo
+evaluator:
+  - type: coco
+    class: [2]

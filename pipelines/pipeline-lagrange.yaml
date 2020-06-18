@@ -1,0 +1,37 @@
+environs:
+  dataset_root: '/mnt/ssd2t/dataset'
+  thresh_root: 'config/threshes'
+  dataset_name: 'lagrange'
+  subsets: ['raw000', 'raw001', 'raw002', 'raw003', 'raw004', 'raw005',
+            'raw006', 'raw007', 'raw008', 'raw009', 'raw010', 'raw011',
+            'raw012', 'raw013', 'raw014', 'raw015', 'raw016', 'raw017',
+            'raw018', 'raw019', 'raw020', 'raw021', 'raw022', 'raw023']
+mongo:
+  host: localhost
+  port: 27017
+inference:
+  type: yolo
+differencer:
+  use_dict: true
+  types: [area, pixel, edge]
+motioner:
+  type: adapative_bg_learning
+evaluator:
+  - type: coco
+    class: [0]
+  - type: coco
+    class: [2]
+  - type: coco
+    class: [0, 2]
+  - type: counting
+    class: [0]
+  - type: counting
+    class: [2]
+  - type: counting
+    class: [0, 2]
+  - type: tagging
+    class: [0]
+  - type: tagging
+    class: [2]
+  - type: tagging
+    class: [0, 2]
