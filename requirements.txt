@@ -67,7 +67,7 @@ psutil==5.6.5
 ptyprocess==0.6.0
 pybgs==3.0.0.post2
 pycryptodome==3.9.4
-Pygments==2.4.2
+Pygments==2.7.4
 pymongo==3.9.0
 pyparsing==2.4.5
 pyrsistent==0.15.5
